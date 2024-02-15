@@ -12,9 +12,12 @@ export class TododataService {
     return this.http.post(this.url + '/Todo-List', body);
   }
   getusers() {
-    return this.http.get(this.url+'/Todo-List');
+    return this.http.get(this.url + '/Todo-List');
   }
-  deleteuser(Id:any){
-    return this.http.delete(this.url+'/Todo-List?id=', Id);
+  deleteuser(Id: any) {
+    return this.http.delete(this.url + '/Todo-List?id='+ Id);
+  }
+  updateusers(Id: any, data: any) {
+    return this.http.put(this.url + '/Todo-list?id=' + Id, data);
   }
 }

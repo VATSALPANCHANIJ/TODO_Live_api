@@ -19,7 +19,7 @@ input {
   background-image: url('../../assets/img/4k-Wallpaper-Images-scaled.jpg');
   background-position: center;
   background-size: cover;
-  height: 110vh;
+  height: 120vh;
   background-attachment: fixed;
   position: relative;
 }
@@ -103,6 +103,7 @@ table {
   font-weight: 600;
   font-size: 18px;
   color: red !important;
+  margin-left: 10px !important;
 }
 
 .edit {
@@ -115,10 +116,28 @@ table {
 
 @media (max-width: 768px) {
   .col-height-12 {
-    height: 125vh;
+    height: 120vh;
   }
 
   .disabled {
     display: none;
+    text-align: center !important;
+  }
+
+  .crud-box {
+    top:0;
+    position: absolute;
+    left: 11%;
+  }
+}
+@media (max-width: 280px) {
+  .crud-box {
+    padding: 20px 10px;
+  }
+  .col-height-12 {
+    height: 115vh;
+  }
+  .delete{
+  margin-left: 4px !important;
   }
 }

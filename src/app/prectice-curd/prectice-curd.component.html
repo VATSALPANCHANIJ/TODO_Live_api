@@ -105,20 +105,21 @@
         </div>
       </div>
       <div class="d-flex justify-content-center submit ">
-        <button (click)="submitdata(dataTransfer.value)">submit</button>
+        <button (click)="submitdata(dataTransfer.value)" *ngIf="isedit == false" [disabled]="!dataTransfer">submit</button>
+        <button (click)="updateuserdata()" *ngIf="isedit ==true">Update</button>
       </div>
       <br><br>
       <div class="alldatatable">
         <h2 class="text-center">🔖 Your Taks</h2>
         <table class="table text-center">
           <thead class="col-12">
-            <tr class="col-12">
-              <th class="">Name</th>
-              <th class="disable">Email</th>
-              <th class="">Password</th>
-              <th class="">City</th>
-              <th class="">Zip</th>
-              <th class="">Action</th>
+            <tr class="">
+              <th class="col-2 ">Name</th>
+              <th class="col-2 disabled">Email</th>
+              <th class="col-2 disabled">Password</th>
+              <th class="col-2 disabled">City</th>
+              <th class="col-2 disabled">Zip</th>
+              <th class="col-2 ">Action</th>
             </tr>
           </thead>
         </table>
@@ -126,14 +127,14 @@
           <table class="table text-center">
             <tbody>
               <tr *ngFor="let data of Todos">
-                <td class="show">{{data.firstname}}</td>
-                <td class="show">{{data.email}}</td>
-                <td class="show">{{data.password}}</td>
-                <td class="show">{{data.city}}</td>
-                <td class="show">{{data.zip}}</td>
-                <td>
+                <td class="show col-2">{{data.firstname}}</td>
+                <td class="show col-2 disabled">{{data.email}}</td>
+                <td class="show col-2 disabled">{{data.password}}</td>
+                <td class="show col-2 disabled">{{data.city}}</td>
+                <td class="show col-2 disabled">{{data.zip}}</td>
+                <td class="col-2">
                   <i class="bi bi-pencil-square show edit" style="cursor: pointer;" (click)="editdata(data)"></i>
-                  &nbsp;&nbsp;
+
                   <i class="bi bi-trash3 show delete" style="cursor: pointer;" (click)="deletedata(data)"></i>
                 </td>
               </tr>
@@ -144,3 +145,4 @@
     </form>
   </div>
 </div>
+

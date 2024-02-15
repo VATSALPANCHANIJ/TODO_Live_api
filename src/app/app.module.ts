@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PrecticeCurdComponent } from './prectice-curd/prectice-curd.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-right'
-    }),
+    ToastrModule.forRoot(),
 
   ],
   providers: [],
