@@ -1,0 +1,61 @@
+<div class="container">
+  <form class="row g-3" #f="ngForm">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" [(ngModel)]="obj.email" #email name="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" [(ngModel)]="obj.password" #password name="password" class="form-control"
+        id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" [(ngModel)]="obj.address" name="address" #address class="form-control" id="inputAddress"
+        placeholder="1234 Main St">
+    </div>
+    <div class="col-md-3">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" [(ngModel)]="obj.city" name="city" #city class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" [(ngModel)]="obj.zip" name="zip" #zip class="form-control" id="inputZip">
+    </div>
+    <br><br>
+    <div class="col-12">
+
+      <button *ngIf="!isInEditMode" type="submit" (click)="submitdata()" class="btn btn-primary">Submit</button>
+      <button *ngIf="isInEditMode" type="submit" (click)="updateData()" class="btn btn-primary">Update</button>
+    </div>
+  </form>
+  <br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of alldata">
+
+        <td>{{data.id}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.password}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.zip}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deletedata(data.id)">Delete</button> &nbsp;
+          <button class="btn btn-warning" (click)="editedata(data.id)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

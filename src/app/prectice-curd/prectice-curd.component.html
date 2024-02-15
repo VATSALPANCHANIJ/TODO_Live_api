@@ -1,0 +1,146 @@
+<!-- <div class="main-box">
+  <div class="container">
+    <form class="crud-box">
+      <h2 class="text-center">🔖Todo list</h2>
+      <div class="row">
+        <div class="col-6">
+          <label>FirstName</label>
+          <input class="input-box" type="text"  placeholder="Enter Your FirstName" name="firstName">
+        </div>
+        <div class="col-6">
+          <label>LastName</label>
+          <input class="input-box" type="text"  placeholder="Enter Your LastName" name="lastName">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <label>Email</label>
+          <input class="input-box" type="email"  placeholder="Enter Your Email" name="email">
+        </div>
+        <div class="col-6">
+          <label>Password</label>
+          <input class="input-box" type="password" placeholder="Enter Your Password" name="password">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <label>City</label>
+          <input class="input-box" type="text" placeholder="Enter Your City" name="city">
+        </div>
+        <div class="col-6">
+          <label>Zip</label>
+          <input class="input-box" type="number" placeholder="Enter Your Zip" name="zip">
+        </div>
+      </div>
+      <div class="d-flex justify-content-center submit">
+        <button (click)="submitdata()">submit</button>
+      </div>
+
+      <div>
+        <h2 class="text-center">🔖 Your Taks</h2>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>FullName</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>City</th>
+              <th>Zip</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="show"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div> -->
+<div class=" col-height-12 main-box">
+  <div class="container">
+    <form class="crud-box" #dataTransfer="ngForm">
+      <h2 class="text-center">🔖Todo list</h2>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <label>FirstName</label>
+          <input class="input-box" type="text" [(ngModel)]="todos.firstname" placeholder="Enter Your FirstName"
+            name="FirstName">
+        </div>
+        <div class="col-12 col-md-6">
+          <label>LastName</label>
+          <input class="input-box ng-valid ng-dirty ng-touched" ng-reflect-name="Email" type="text"
+            [(ngModel)]="todos.lastname" placeholder="Enter Your LastName" name="LastName">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <label>Email</label>
+          <input class="input-box" type="email" [(ngModel)]="todos.email" placeholder="Enter Your Email" name="Email">
+          <!-- <input _ngcontent-ng-c2769343643 type="email" placeholder="Enter Your Email" name="Email" class="input-box ng-untouched ng-pristine ng-valid" ng-reflect-name="Email"> -->
+
+        </div>
+        <div class="col-12 col-md-6">
+          <label>Password</label>
+          <!-- <input class="input-box" type="password"  placeholder="Enter Your Password" name="Password"> -->
+          <input type="password" [(ngModel)]="todos.password" placeholder="Enter Your Password" name="Password"
+            class="input-box ng-untouched ng-pristine ng-valid" ng-reflect-name="Password"
+            autocomplete="current-password">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <label>City</label>
+          <input class="input-box" type="text" [(ngModel)]="todos.city" placeholder="Enter Your City" name="City">
+        </div>
+        <div class="col-12 col-md-6">
+          <label>Zip</label>
+          <input class="input-box" type="number" [(ngModel)]="todos.zip" placeholder="Enter Your Zip" name="Zip">
+        </div>
+      </div>
+      <div class="d-flex justify-content-center submit ">
+        <button (click)="submitdata(dataTransfer.value)">submit</button>
+      </div>
+      <br><br>
+      <div class="alldatatable">
+        <h2 class="text-center">🔖 Your Taks</h2>
+        <table class="table text-center">
+          <thead class="col-12">
+            <tr class="col-12">
+              <th class="">Name</th>
+              <th class="disable">Email</th>
+              <th class="">Password</th>
+              <th class="">City</th>
+              <th class="">Zip</th>
+              <th class="">Action</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="Yourtask">
+          <table class="table text-center">
+            <tbody>
+              <tr *ngFor="let data of Todos">
+                <td class="show">{{data.firstname}}</td>
+                <td class="show">{{data.email}}</td>
+                <td class="show">{{data.password}}</td>
+                <td class="show">{{data.city}}</td>
+                <td class="show">{{data.zip}}</td>
+                <td>
+                  <i class="bi bi-pencil-square show edit" style="cursor: pointer;" (click)="editdata(data)"></i>
+                  &nbsp;&nbsp;
+                  <i class="bi bi-trash3 show delete" style="cursor: pointer;" (click)="deletedata(data)"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
