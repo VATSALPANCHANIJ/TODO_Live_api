@@ -27,6 +27,7 @@ input {
 label {
   color: white;
   font-size: 18px;
+  margin: 10px 10px 0;
 }
 
 h2 {
@@ -113,6 +114,10 @@ table {
 
 }
 
+.required {
+  color: #ffe8ae !important;
+  font-size: 18px;
+}
 
 @media (max-width: 768px) {
   .col-height-12 {
@@ -125,19 +130,23 @@ table {
   }
 
   .crud-box {
-    top:0;
+    top: 0;
     position: absolute;
     left: 11%;
   }
 }
+
 @media (max-width: 280px) {
   .crud-box {
     padding: 20px 10px;
   }
+
   .col-height-12 {
     height: 115vh;
   }
-  .delete{
-  margin-left: 4px !important;
+
+  .delete {
+    margin-left: 4px !important;
   }
+
 }

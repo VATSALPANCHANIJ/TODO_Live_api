@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TododataService } from '../tododata.service';
-import { ToastrService } from 'ngx-toastr/public_api';
 @Component({
   selector: 'app-prectice-curd',
   templateUrl: './prectice-curd.component.html',
@@ -12,23 +11,32 @@ export class PrecticeCurdComponent implements OnInit {
   Todos: any;
   todos = new Todo();
 
-  constructor(public service: TododataService) {
-  }
+  constructor(public service: TododataService,
+
+    ) { }
+
   ngOnInit(): void {
     this.getUsersdata();
+    // this.createForm();
   }
+
   submitdata(dataTransfer: any) {
+
     // console.log("Done submitting");
-    // console.log(f);
     this.service.addusers(dataTransfer).subscribe({
       next: (res) => {
         console.log(res);
-        alert("Submit the data in database");
-
-
-        if(res){
-          this.service.getusers().subscribe();
+        // if (res) {
+        //   this.service.getusers().subscribe();
+        // }
+        if (res) {
+          if (!this.todos.firstname || !this.todos.lastname || !this.todos.city || !this.todos.password || !this.todos.email || !this.todos.zip) {
+            alert("All filed requried")
+          }
         }
+        this.getUsersdata();
+        alert("Submit the data in database");
+        this.cleardata();
       }, error: (err) => {
         console.log("Error in submit data check the code >>>>>>", err);
       },
@@ -57,7 +65,7 @@ export class PrecticeCurdComponent implements OnInit {
     })
     alert("Successfully Deleted");
   }
-  
+
   editdata(data: any) {
     this.todos = data;
     this.isedit = true;
@@ -68,11 +76,11 @@ export class PrecticeCurdComponent implements OnInit {
     this.service.updateusers(this.todos.id, this.todos).subscribe({
       next: (res) => {
         this.getUsersdata();
+        this.cleardata();
       }, error: (err) => {
         console.log("Error in update " + err);
       }
     })
-    this.cleardata();
     // this.getUsersdata();
   }
   cleardata() {
