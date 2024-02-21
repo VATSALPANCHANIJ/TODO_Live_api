@@ -1,0 +1,92 @@
+<!-- <div class="budget-tracker">
+  <h1>Budget Tracker</h1>
+  <div class="budget-info">
+    <label for="total-amount">Enter Total Amount:</label>
+    <input id="total-amount" [(ngModel)]="totalAmount" type="number">
+    <button (click)="setBudget()">Set Budget</button>
+    <p>Total Budget: {{ totalBudget }}</p>
+  </div>
+  <div class="expenses-list">
+    <h2>Expense List</h2>
+    <ul>
+      <li *ngFor="let expense of expenses">
+        {{ expense.name }}  {{ expense.amount }}
+      </li>
+    </ul>
+  </div>
+  <div class="expenses-info">
+    <label for="expense-amount">Expenses:</label>
+    <input id="expense-amount" [(ngModel)]="expenseAmount" type="number">
+    <label for="expense-name">Expense Name:</label>
+    <input id="expense-name" [(ngModel)]="expenseName" type="text">
+    <button (click)="addExpense()">Add Expense</button>
+    <p>Balance: {{ balance }}</p>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="sub-box">
+    <h1><span class="bgd">Budget</span> Tracker</h1>
+    <div class="row  justify-content-between align-items-center">
+
+      <!-- <form #budgetAmount="ngForm" class="budget-section col-4">
+        <h2><span class="bgd">Budget</span> Amount: <span id="total-budget"></span></h2>
+        <input class="d-block" id="total-amount" [(ngModel)]="budget.totalBudget" type="number">
+        <button id="check-amount-btn" (click)="setBudget(budgetAmount.value)">Budget Add</button>
+      </form> -->
+      <form #budgetForm="ngForm" class="budget-section col-4" (ngSubmit)="setBudget()">
+        <h2><span class="bgd">Budget</span> Amount:</h2>
+        <input class="d-block" id="total-amount" [(ngModel)]="budget.totalBudget" name="totalBudget" type="number"
+          min="0" required>
+        <button id="check-amount-btn" type="submit">Budget Add</button>
+      </form>
+
+      <form class="expense col-4" #expensesdata="ngForm">
+        <label>Expenses Amount:</label>
+        <input class="d-block" name="expenseAmount" [(ngModel)]="records.expenseAmount" type="number">
+        <label>Expense Name:</label>
+        <input class="d-block" name="expenseName" [(ngModel)]="records.expenseName" type="text">
+
+        <button (click)="addExpense(expensesdata.value)" [disabled]="expensesdata.invalid" *ngIf="editid == false"
+          [disabled]="!expensesdata">Add Expense</button>
+        <button (click)="updatedata()" *ngIf="editid == true">Update Expense</button>
+      </form>
+    </div>
+  </div>
+  <button onclick="demo()">test</button>
+  <div class="expenses-info">
+    <div class="survey">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-4">
+          <h3>Total Budget: <span> {{ budget.totalBudget | currency:'USD' }}</span></h3>
+        </div>
+        <div class="col-4">
+          <h3>Balance: <span id="balance"> {{budget.balance }}</span></h3>
+        </div>
+        <div class="col-4">
+          <h3>Total Expense: <span id="balance"> {{ budget.totalExexpense }}</span></h3>
+        </div>
+      </div>
+    </div>
+    <h2>Expense List</h2>
+    <div class="expense-list">
+      <ul>
+        <li class="expense-item" *ngFor="let data of Records">
+          <div class="demo-1 col-12">
+            <br>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-md-5 text-center">
+                <h5 class="col-12 ">{{ data.expenseName }}....................................... {{ data.expenseAmount
+                  }}</h5>
+              </div>
+              <div class="col-md-5 text-center">
+                <i class="bi bi-pencil-square mx-5" (click)="editdata(data)"></i>
+                <i class="bi bi-trash3" (click)="deletedata(data.id)"></i>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

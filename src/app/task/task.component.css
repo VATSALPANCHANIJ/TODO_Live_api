@@ -1,0 +1,71 @@
+.main-box {
+  background-image: url('../../assets/img/task.png');
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.input-box {
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  padding: 0 20px;
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+  border-bottom: 2px solid #44347c;
+}
+
+::selection {
+  color: #9ad5e2da;
+}
+
+label {
+  font-size: 24px;
+
+}
+
+h2 {
+  background: -webkit-linear-gradient(rgb(121 52 118), rgb(254 240 204));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.submit-icon {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.submit-icon i {
+  font-size: 24px;
+}
+
+.welcome-shape {
+  position: relative;
+}
+
+.shape1 img , .shape6 img, .shape4 img {
+  width: 150px;
+  height: 200px;
+}
+.shape2 img , .shape6 img {
+  width: 250px;
+  height: 250px;
+}
+.shape3 img{
+  width: 200px;
+}
+.title{
+  box-shadow: inset -1px 2px 11px 1px #00000042;
+  background-color: #ffffff33;
+  height: 160px;
+  border-radius: 20px;
+  padding: 30px;
+}
+

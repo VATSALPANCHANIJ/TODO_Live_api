@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 5px;
   background-color: #000000 !important;
 }
@@ -8,3 +8,146 @@
   background-color: #44bd9f39 !important;
   height: 5px;
 }
+
+.welcome-shape .shape1 {
+  position: absolute;
+  right: -200px;
+  top: -150px;
+  opacity: 10%;
+  -webkit-animation: moveScale 3s linear infinite;
+  animation: moveScale 3s linear infinite;
+}
+
+@keyframes moveScale {
+
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+.welcome-shape .shape2 {
+  position: absolute;
+  opacity: 40%;
+  top: 350px;
+  right: -200px;
+  -webkit-animation: moveBounce 5s linear infinite;
+  animation: moveBounce 5s linear infinite;
+}
+
+.welcome-shape .shape3 {
+  position: absolute;
+  opacity: 10%;
+  top: -187px;
+  left: -20%;
+  -webkit-animation: shape3 5s linear infinite;
+  animation: shape3 5s linear infinite;
+}
+
+.welcome-shape .shape4 {
+  position: absolute;
+  opacity: 30%;
+  top: 460px;
+  left: -100px;
+  -webkit-animation: shape4 5s linear infinite;
+  animation: shape4 5s linear infinite;
+}
+
+.welcome-shape .shape5 {
+  position: absolute;
+  opacity: 10%;
+  top: 250px;
+  left: 50%;
+  -webkit-animation: shape5 5s linear infinite;
+  animation: shape5 5s linear infinite;
+}
+
+
+@keyframes moveBounce {
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+}
+
+/* 3 */
+@keyframes shape3 {
+
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+
+  50% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+/* 4 */
+
+@keyframes shape4 {
+
+  0% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+}
+
+/* 5 */
+
+@keyframes shape5 {
+
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  50% {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+
+
+

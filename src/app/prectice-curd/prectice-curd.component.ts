@@ -11,9 +11,7 @@ export class PrecticeCurdComponent implements OnInit {
   Todos: any;
   todos = new Todo();
 
-  constructor(public service: TododataService,
-
-    ) { }
+  constructor(public service: TododataService) { }
 
   ngOnInit(): void {
     this.getUsersdata();
@@ -47,6 +45,7 @@ export class PrecticeCurdComponent implements OnInit {
     this.service.getusers().subscribe({
       next: (res) => {
         this.Todos = res;
+
       }, error: (err) => {
         console.log("GetUserdata  give the error and he code >>>>>>>>>", err);
       },
@@ -60,7 +59,7 @@ export class PrecticeCurdComponent implements OnInit {
         this.getUsersdata();
       },
       error: (err) => {
-        console.log("Error in delete " + err);
+        console.log("Error in delete ");
       },
     })
     alert("Successfully Deleted");

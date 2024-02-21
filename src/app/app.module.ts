@@ -12,12 +12,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { PrecticeCurdComponent } from './prectice-curd/prectice-curd.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { TaskComponent } from './task/task.component';
+import { BudgetTrackerComponent } from './budget-tracker/budget-tracker.component';
+import { ParentComponent } from './parent/parent.component';
 @NgModule({
   declarations: [
     AppComponent,
     LocalStoregeComponent,
     PrecticeCurdComponent,
+    TaskComponent,
+    BudgetTrackerComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,

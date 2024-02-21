@@ -64,7 +64,7 @@
 <div class=" col-height-12 main-box">
   <div class="container">
     <form class="crud-box" #dataTransfer="ngForm">
-      <h2 class="text-center">🔖Todo list</h2>
+      <h2 class="text-center">🔖Personal list</h2>
       <div class="row">
         <div class="col-12 col-md-6">
           <label>FirstName</label>
@@ -78,17 +78,14 @@
             [(ngModel)]="todos.lastname" required #lastname="ngModel" pattern="[a-zA-Z]+$"
             placeholder="Enter Your LastName" name="LastName">
           <span class="required" *ngIf="lastname.invalid && lastname.touched">Please enter the vaild Name</span>
-
         </div>
       </div>
-
       <div class="row">
         <div class="col-12 col-md-6">
           <label>Email</label>
           <input class="input-box" type="email" required #email="ngModel" email minlength="5" [(ngModel)]="todos.email"
             placeholder="Enter Your Email" name="Email">
           <span class="required" *ngIf="email.invalid && email.touched">Please enter the vaild Email</span>
-
         </div>
         <div class="col-12 col-md-6">
           <label>Password</label>
@@ -103,13 +100,12 @@
           <input class="input-box" type="text" required #city="ngModel" pattern="[a-zA-Z]+$" [(ngModel)]="todos.city"
             placeholder="Enter Your City" name="City">
           <span class="required" *ngIf="city.invalid && city.touched">Please Enter The Vaild City</span>
-
         </div>
         <div class="col-12 col-md-6">
           <label>Zip</label>
           <input class="input-box" type="number" required #zip="ngModel" pattern="[1-9]+$" [(ngModel)]="todos.zip"
             placeholder="Enter Your Zip" name="Zip">
-            <span class="required" *ngIf="zip.invalid && zip.touched">Please Enter The Vaild City</span>
+            <span class="required" *ngIf="zip.invalid && zip.touched">Please Enter The Vaild zip</span>
           </div>
       </div>
       <div class="d-flex justify-content-center submit ">
@@ -119,7 +115,7 @@
       </div>
       <br><br>
       <div class="alldatatable">
-        <h2 class="text-center">🔖 Your Taks</h2>
+        <h2 class="text-center">🔖 Personal Details</h2>
         <table class="table text-center">
           <thead class="col-12">
             <tr class="">
